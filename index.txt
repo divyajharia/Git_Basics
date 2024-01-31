@@ -1,1 +1,90 @@
 this is the first time using git from command line.
+
+(base) divyajharia@divyas-MacBook-Air Git_Basics % git --version
+git version 2.43.0
+
+(base) divyajharia@divyas-MacBook-Air Git_Basics % git status
+fatal: not a git repository (or any of the parent directories): .git
+
+(base) divyajharia@divyas-MacBook-Air Git_Basics % git init
+Initialized empty Git repository in /Users/divyajharia/Desktop/Git_Basics/.git/
+
+(base) divyajharia@divyas-MacBook-Air Git_Basics % git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+(base) divyajharia@divyas-MacBook-Air Git_Basics % 
+(base) divyajharia@divyas-MacBook-Air Git_Basics % git commit -m "added first text file"
+[master (root-commit) ff6f20f] added first text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.txt
+
+
+
+ (base) divyajharia@divyas-MacBook-Air Git_Basics % git log
+commit ff6f20fe4fbf3dd9b62af64bcbfd11919ee54393 (HEAD -> master)
+Author: Divya <divyajharia2@gmail.com>
+Date:   Tue Jan 30 13:44:46 2024 +0900
+
+    added first text file
+
+(base) divyajharia@divyas-MacBook-Air Git_Basics % git branch
+* master
+
+
+(base) divyajharia@divyas-MacBook-Air Git_Basics % git branch Second-branch
+(base) divyajharia@divyas-MacBook-Air Git_Basics % git branch              
+  Second-branch
+* master
+
+
+
+(base) divyajharia@divyas-MacBook-Air Git_Basics % git checkout Second-branch    
+Switched to branch 'Second-branch'
+
+
+
+git checkout -b thrird-branch 
+
+git merge thrird-branch
+
+git switch Second-branch
+
+head and dettached head
+
+git rm index.txt
+
+undoing unstaged changes in track file
+git restore
+git checkout .
+git clean -dn
+git clean -df
+
+undoing stagged changes
+
+2 commands to be  used together 
+    git reset index.txt  <takes to the one last stage of check in >
+    git checkout index.txt
+
+another way of doing it
+    git restore --stagged index.txt
+    git checkout index.txt
+
+Reset command
+git reset --soft HEAD~1   <this will only delete the commit but the file be there in staging area
+git reset HEAD~1          < file deletes from stagging area
+git reset --hard HEAD~1   <removes file from staging area working dir and commit ?
+
+Delete Branches
+git baranch -D fourth-branch  <force delete without merge
+git branch -d fourth-branch   < only deletes whne then is a merge
+
+
